@@ -1,0 +1,10 @@
+﻿#form-new-user {
+    padding: 20px 20px;
+}
+.alert {
+    margin: 10px 5px;
+}
+
+#couple-form .form-group .btn {
+    float:right;
+} 

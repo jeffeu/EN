@@ -1,0 +1,102 @@
+﻿@model EnlaceNoivas.ViewModels.CoupleUser
+@using EnlaceNoivas.Helpers
+@{
+    ViewBag.Title = "Criar novo usuário";
+    ViewBag.Controller = "User";
+    ViewBag.Action = "Create";
+}
+<div class="row" id="form-new-user">
+
+    @using (Html.BeginForm("Register", "User")) { 
+        <div class="col-lg-1 col-sm-0"></div>
+        <div class="col-lg-4 col-sm-12" id="">
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.User.Username, new { @class = "form-control", @placeholder = "Nome de usuário" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Username).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Username)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.User.Email, new { @class = "form-control", @placeholder = "E-mail" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Email).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Email)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.User.Pass, new { @class = "form-control", @placeholder = "Senha" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Pass).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Pass)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.User.ConfirmPass, new { @class = "form-control", @placeholder = "Confirmar senha" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.ConfirmPass).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.ConfirmPass)
+                    </div> 
+                }
+            </div>
+        </div>
+        <div class="col-lg-2 col-sm-0"></div>
+        <div class="col-lg-4 col-sm-12" id="couple-form">
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.Couple.BrideName, new { @class = "form-control", @placeholder = "Nome da Noiva" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.Couple.BrideName).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.Couple.BrideName)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.Couple.GroomName, new { @class = "form-control", @placeholder = "Nome do Noivo" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.Couple.BrideName).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.Couple.GroomName)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.Couple.MerriedDate, new { @class = "form-control", @placeholder = "Data do casamento" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.Couple.MerriedDate).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.Couple.MerriedDate)
+                    </div> 
+                }
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(cu => cu.Couple.CoupleUrl, new { @class = "form-control", @placeholder = "extensão" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.Couple.CoupleUrl).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.Couple.CoupleUrl)
+                    </div> 
+                }
+            </div>
+            <input type="submit" value="Cadastrar" class="btn btn-info"/>
+        </div>
+        <div class="col-lg-1 col-sm-0"></div>
+    }
+
+</div>
+

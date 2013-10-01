@@ -1,0 +1,106 @@
+﻿*:focus {
+  outline: none;
+}
+.modal-dialog {
+    width: 400px;
+}
+#nav-top {
+    background: #0ac0d5;
+    height: 70px;
+}
+#nav-top #search #form-search {
+    margin-top:12px;
+    margin-bottom:12px;
+}
+#nav-top #right-menu .btn-group {
+    float: right;
+}
+#nav-top #search #form-search input {
+    background-color:#0ac0d5;
+    color:white;
+    border:1px solid rgba(0, 0, 0, 0.1);
+}
+#nav-top #search #form-search .input-group-btn .btn{
+    color:#0ac0d5;
+    margin-right:15px;
+    border-bottom-right-radius:16px;
+    border-top-right-radius:16px;
+}
+#nav-top #search #form-search .input-group-btn .btn:hover{
+    border-color:   rgba(0, 0, 0, 0.10);
+    color:white;
+    background-color:#0ac0d5;
+    margin-right:15px;
+    border-bottom-right-radius:16px;
+    border-top-right-radius:16px;
+}
+#nav-top #right-menu #link {
+    float:right;
+    color:white;
+    margin-right:2px;
+    margin-top:12px;
+    margin-bottom:12px;
+}
+#nav-top #right-menu #link:hover {
+    text-shadow:2px 2px rgba(0, 0, 0, 0.1);
+    text-decoration:none;
+    font-size:18px;
+    margin-right:-2px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+#form-login .form-group .link-forgot-pass {
+    margin-left:40px;
+}
+#form-login .form-group #btn-enter {
+    width:30%;
+}
+#form-login .form-group #btn-drop  {
+    float:right;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+
+DIV.list_item_container {
+    height: 5px;
+    padding: 5px;
+}
+DIV#image {
+    margin-top: 10px;
+    margin-bottom:5px;
+}
+.ui-autocomplete {
+   
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border:1px solid #a6d8dd;
+    background-color:#fff;
+}
+.ui-corner-all h4{
+    font-size:90%;
+    color:#539AA3;
+}
+.ui-corner-all p{
+    font-size:80%;
+    color:#808080;
+}
+.ui-menu-item {
+    border-bottom:1px solid #f2f2f2;
+}

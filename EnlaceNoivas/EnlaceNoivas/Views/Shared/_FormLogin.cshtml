@@ -1,0 +1,30 @@
+﻿<div id="form-login">
+    @if (TempData["AuthError"] != null) { 
+        <div class="alert alert-danger">
+            <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+            @TempData["AuthError"]   
+        </div>
+    }
+    @using (Html.BeginForm("SignIn","User")) { 
+            <div class="form-group">
+                @Html.TextBox("UserOrEmail","", new { @class="form-control", @placeholder="Nome de usuário ou e-mail"})
+            </div>
+            <div class="form-group"> 
+                @Html.Password("Pass","", new { @class="form-control", @placeholder="Senha"})
+            </div>
+            <div class="form-group"> 
+                <input type="submit" value="Entrar" class="btn btn-default" />
+                <div class="btn-group" id="btn-drop">
+                  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                    Cadastrar <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Casal","Create","User")</li>
+                    <li>@Html.ActionLink("Fornecedor","Create","Provider")</li>
+                  </ul>
+                </div>
+           </div>
+        @Html.ActionLink("Esqueceu sua senha?", "UpdatePass", "User", new { @class="link-forgot-pass"})
+           
+    }
+</div>

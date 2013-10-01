@@ -1,0 +1,85 @@
+﻿@using EnlaceNoivas.Helpers;
+@{
+    var current_user = LoginHelper.getCurrentUser(User.Identity.Name);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bootstrap.css")
+    @Styles.Render("~/layout.css")
+    @Styles.Render("~/jqueryui-AC.css")
+    @Styles.Render("~/"+ViewBag.Controller+"/"+ViewBag.Action+".css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <div id="nav-top" class="row">
+        <div class="col-md-2" id="logo"></div>
+        
+        <div class="col-md-4"></div>
+        <div id="right-menu" class="col-md-2">
+            @if (current_user != null)
+            {   
+                <div class="btn-group">
+                  <a class="btn btn-link"data-toggle="dropdown" id="link">
+                    <span class="glyphicon glyphicon-cog"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Sair", "SignOut", "User")</li>
+                  </ul>
+                </div>
+                @Html.ActionLink(current_user.Username, "Profile", "User", current_user.ID,new { @class="btn btn-link", @id="link"})
+            }
+            else
+            {
+            <a data-toggle="modal" href="#myModal" class="btn btn-link" id="link">Entrar</a>
+            }
+        </div>
+        <div class="col-md-4" id="search">
+            @using (Html.BeginForm("SearchProvider","Search")) {
+                <div id="form-search" class="input-group">
+                    @Html.TextBox("searched", "", new { @class ="form-control", @id="search-field"})
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/jqueryui.js")
+    @Scripts.Render("~/bootstrap.js")
+    @Scripts.Render("~/layout.js")
+   
+    @RenderSection("scripts", required: false)
+   <script>
+       @if (TempData["AuthError"] != null)
+        {
+            <text>
+       $(document).ready(function () {
+           $("#myModal").modal('show');
+       });
+       </text>
+        }
+   </script>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Olá, Bem Vindo ao Enlace noivas</h4>
+        </div>
+        <div class="modal-body">
+          @Html.Partial("_FormLogin")
+        </div>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

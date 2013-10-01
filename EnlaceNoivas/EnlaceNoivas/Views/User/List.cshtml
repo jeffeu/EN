@@ -1,0 +1,10 @@
+﻿@model IEnumerable<EnlaceNoivas.Models.User>
+@{
+    ViewBag.Title = "List";
+}
+<ul>
+@foreach (var user in Model) {
+    <li>@user.Username</li>
+}
+</ul>
+<h2>List</h2>

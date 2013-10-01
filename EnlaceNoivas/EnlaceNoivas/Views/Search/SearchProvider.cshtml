@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EnlaceNoivas.Models.Provider>
+@{
+    ViewBag.Title = "SearchProvider";
+}
+@foreach(var provider in Model){
+    <div class="row">
+        <div class ="col-lg-1"></div>
+        <div class="col-lg-2">
+            <img width="150" height="120" src="~/Content/Images/@provider.Image" />
+        </div>
+        <div class="col-lg-6">
+            <div class="row">
+                <h3>@provider.Name</h3>
+            </div>
+            <div class="row">
+                <p>@provider.City</p>
+                <p>@provider.Street , @if (@provider.Number != 0) { @provider.Number}</p>
+                
+            </div>
+        </div>
+    </div>
+}

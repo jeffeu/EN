@@ -1,0 +1,151 @@
+﻿@using EnlaceNoivas.Helpers;
+@model EnlaceNoivas.ViewModels.ProviderMV
+@{
+    ViewBag.Title = "Cadastro de Fornecedores";
+    ViewBag.Controller ="Provider";
+    ViewBag.Action="Create";
+}
+
+
+<div class="row" id="form-new-user">
+
+    @using (Html.BeginForm("Register", "Provider")) { 
+        <div class="col-lg-1 col-sm-0"></div>
+        <div class="col-lg-4 col-sm-12" id="">
+            <fieldset><legend>Dados de Usuário</legend>
+                <div class="form-group">
+                @Html.TextBoxFor(provider=> provider.User.Username, new { @class = "form-control", @placeholder = "Nome de usuário" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Username).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Username)
+                    </div> 
+                }
+            </div>
+                <div class="form-group">
+                @Html.TextBoxFor(provider=> provider.User.Email, new { @class = "form-control", @placeholder = "E-mail" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Email).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Email)
+                    </div> 
+                }
+            </div>
+                <div class="form-group">
+                @Html.PasswordFor(provider => provider.User.Pass, new { @class = "form-control", @placeholder = "Senha" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.Pass).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.Pass)
+                    </div> 
+                }
+            </div>
+                <div class="form-group">
+                @Html.PasswordFor(provider => provider.User.ConfirmPass, new { @class = "form-control", @placeholder = "Confirmar senha" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(cu => cu.User.ConfirmPass).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(cu => cu.User.ConfirmPass)
+                    </div> 
+                }
+            </div>
+            </fieldset>
+        </div>
+        <div class="col-lg-2 col-sm-0"></div>
+        <div class="col-lg-4 col-sm-12" id="provider-form">
+            <fieldset><legend>Dados sobre o fornecedor</legend>
+                <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Name, new { @class = "form-control", @placeholder = "Nome do estabelecimento" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Name).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Name)
+                    </div> 
+                }
+            </div>
+                <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Type, new { @class = "form-control", @placeholder = "Tipo" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Type).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Type)
+                    </div> 
+                }
+            </div>
+                <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.City, new { @class = "form-control", @placeholder = "Cidade" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.City).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.City)
+                    </div> 
+                }
+            </div>
+                <div class="row">
+                <div class="col-lg-9">
+                    <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Street, new { @class = "form-control", @placeholder = "Rua" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Street).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Street)
+                    </div> 
+                }
+            </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Number, new { @class = "form-control", @placeholder = "Número" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Number).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Number)
+                    </div> 
+                }
+            </div>
+                </div>
+            </div>
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Phone1, new { @class = "form-control", @placeholder = "1º Número de telefone" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Phone1).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Phone1)
+                    </div> 
+                }
+            </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                @Html.TextBoxFor(provider => provider.Provider.Phone2, new { @class = "form-control", @placeholder = "2º Número de telefone" })
+                @if (!TagHelper.isEmpity(Html.ValidationMessageFor(provider => provider.Provider.Phone2).ToString()))
+                {
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+                        @Html.ValidationMessageFor(provider => provider.Provider.Phone2)
+                    </div> 
+                }
+            </div>
+                </div>
+            </div>
+            </fieldset>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-info"/>
+            </div>
+        </div>
+        <div class="col-lg-1 col-sm-0"></div>
+    }
+
+</div>
