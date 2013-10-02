@@ -32,7 +32,8 @@ namespace EnlaceNoivas
                         "~/Scripts/Layout/layout.js"));
 
             //actions css
-
+            bundles.Add(new StyleBundle("~/Search/SearchProvider.css").Include(
+                        "~/Content/Search/SearchProvider.css"));
             bundles.Add(new ScriptBundle("~/User/Create.css").Include(
                         "~/Content/User/Create.css"));
             bundles.Add(new ScriptBundle("~/Provider/Create.css").Include(

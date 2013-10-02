@@ -22,7 +22,7 @@ $(document).ready(function () {
                 success: function (data) {
                     response($.map(data, function (item) {
                         
-                        return { label: item.Id, value: item.Name, image: item.ImagePath, city: item.City, street: item.Street, number: item.Number};
+                        return { label: item.Id, value: item.Name, image: item.ImagePath, city: item.City, type: item.Type};
                     }))
 
                 }
@@ -32,7 +32,7 @@ $(document).ready(function () {
             noResults: "", results: ""
         }
     }).data( "autocomplete" )._renderItem = function( ul, item ) {
-        var inner_html = '<a><div class="row"></div><div class="col-lg-4" id="image"><img width="70" height="75" src="' + item.image + '"/></div><div class="col-lg-8"><div class="row"><h4>' + item.label + '</h4></div><div class="row"><p>' + item.city + '</p><p>' + item.street + ' ,' + item.number + '</p></div></div></a>';
+        var inner_html = '<a><div class="row"></div><div class="col-lg-4" id="image"><img width="70" height="75" src="' + item.image + '"/></div><div class="col-lg-8"><div class="row"><h4>' + item.label + '</h4></div><div class="row"><p>' + item.city + '</p><p>' + item.type +'</p></div></div></a>';
         return $('<a href="/Provider/'+replaceAll(item.label," ","-")+'"><li></li></a>')
             .data( "item.autocomplete", item )
             .append(inner_html)
