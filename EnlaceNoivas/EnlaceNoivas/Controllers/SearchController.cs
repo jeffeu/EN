@@ -13,18 +13,16 @@ namespace EnlaceNoivas.Controllers
         // GET: /Search/
         private int resultMount = 3;
         private ModelContext db = new ModelContext();
-        
-        public ActionResult SearchProvider(int? page, string? searched)
+        private string WordSearched = "";
+        public ActionResult SearchProvider(int page)
         {
-            if (searched.Equals(null))
-            {
-                searched = ViewBag.Searched;
-            }
-            else { 
-                ViewBag.Searched = searched;
-            }
-            page = page.Equals(null) ? 1 : page;
-            return View(getIndex(searched.ToString(),Convert.ToInt32(page)));
+            return View(getIndex(WordSearched, page));
+        }
+        [HttpPost]
+        public ActionResult SearchProvider(string searched)
+        {
+            WordSearched = searched;
+            return View(getIndex(this.WordSearched.ToString(), 1));
         }
         public ActionResult Found(string searched)
         {
