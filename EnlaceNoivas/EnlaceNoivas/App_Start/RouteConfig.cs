@@ -14,8 +14,8 @@ namespace EnlaceNoivas
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
                 name: "SearchPage",
-                url: "Search/SearchProvider/{page}",
-                defaults: new { controller = "Search", action = "SearchProvider", page = UrlParameter.Optional }
+                url: "Search/SearchProvider/{searched}/{page}",
+                defaults: new { controller = "Search", action = "SearchProvider", page = UrlParameter.Optional, searched = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Default",

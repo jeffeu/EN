@@ -7,23 +7,38 @@
 
 @foreach (var provider in Model)
 {
-    <div class="row">
+    <div class="row" id="line">
         <div class="col-lg-1"></div>
 
-        <div class="col-lg-2">
-            <img width="115" height="105" src="~/Content/Images/@provider.Image" />
+        <div class="col-lg-2" id="bg-image-line">
+            <div id="image-line">
+                <img width="115" height="105" src="~/Content/Images/@provider.Image" />
+            </div>
         </div>
         <div class="col-lg-6">
-            <div class="row">
-                <h3>@provider.Name</h3>
-                <p>@provider.City</p>
-                <p>@provider.Type</p>
+            <div class="row" id="bg-text-line">
+                <div id="text-line">
+                    <h3>@provider.Name</h3>
+                    <p>@provider.City</p>
+                    <p>@provider.Type</p>
+                </div>
             </div>
 
         </div>
     </div>
 }
-@for (int page = 1; page <= ViewBag.ListSize; page++ )
-{
-    @Html.ActionLink(page.ToString(), "SearchProvider/"+page);
-}
+<div class="row" id="line">
+        <div class="col-lg-2"></div>    
+        <div class="col-lg-8">
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    @for (int page = 1; page <= ViewBag.ListSize; page++ ){
+      
+                        @Html.ActionLink(page.ToString(), "SearchProvider", "Search", new { page = page, searched = ViewBag.Searched }, new { @class = "btn btn-default" });
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+</div>
+

@@ -1,3 +1,30 @@
 ﻿#line {
-    background-color:#d1d1d1;
+    margin-Top:10px;
+}
+#bg-image-line {
+    border-bottom-left-radius:5px;
+    border-top-left-radius:5px;
+    background-color:#d0e5e8;
+}
+#bg-text-line {
+    border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    background-color:#88cad1;
+}
+#image-line{
+    margin-left:20px;
+    margin-top:5px;
+    margin-bottom:6px;
+}
+#text-line {
+    margin-top:-5px;
+    margin-left:20px;
+    padding-bottom:5px;
+}
+#text-line p {
+    color:white;
+}
+#text-line h3 {
+    font-weight:bold;
+    color:white;
 }

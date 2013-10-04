@@ -13,16 +13,17 @@ namespace EnlaceNoivas.Controllers
         // GET: /Search/
         private int resultMount = 3;
         private ModelContext db = new ModelContext();
-        private string WordSearched = "";
-        public ActionResult SearchProvider(int page)
+        public ActionResult SearchProvider(int page, string searched)
         {
-            return View(getIndex(WordSearched, page));
+            ViewBag.Searched = searched;
+            return View(getIndex(searched, page));
         }
         [HttpPost]
         public ActionResult SearchProvider(string searched)
         {
-            WordSearched = searched;
-            return View(getIndex(this.WordSearched.ToString(), 1));
+
+            ViewBag.Searched = searched;
+            return View(getIndex(searched, 1));
         }
         public ActionResult Found(string searched)
         {
@@ -31,7 +32,7 @@ namespace EnlaceNoivas.Controllers
         public IQueryable<Provider> SearchQuery(string searched)
         {
             var providers = db.Provider.Where(prov => (prov.Name.Contains(searched) || (prov.City.Contains(searched) || (prov.Type.Contains(searched))))).Distinct().OrderBy(prov => prov.Name);
-            ViewBag.ListSize = providers.Count()/resultMount;
+            ViewBag.ListSize = providers.Count() / resultMount + ((providers.Count() % resultMount!=0)? 1:0);
             return providers;
         }
         public IQueryable<Provider> getIndex(string searched)
