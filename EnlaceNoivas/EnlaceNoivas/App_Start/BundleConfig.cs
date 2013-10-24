@@ -22,8 +22,6 @@ namespace EnlaceNoivas
                         "~/Content/bootstrap/bootstrap.css"));
             bundles.Add(new ScriptBundle("~/bootstrap.js").Include(
                         "~/Scripts/boorstrap/bootstrap.js"));
-            bundles.Add(new ScriptBundle("~/typeahead.js").Include(
-                        "~/Scripts/typeahead.js"));
             //End boostrap
 
             bundles.Add(new StyleBundle("~/layout.css").Include(
@@ -36,10 +34,13 @@ namespace EnlaceNoivas
                         "~/Content/Search/SearchProvider.css"));
             bundles.Add(new StyleBundle("~/Search/PageNotFold.css").Include(
                         "~/Content/Search/PageNotFold.css"));
-            bundles.Add(new ScriptBundle("~/User/Create.css").Include(
+            bundles.Add(new StyleBundle("~/User/Create.css").Include(
                         "~/Content/User/Create.css"));
-            bundles.Add(new ScriptBundle("~/Provider/Create.css").Include(
+            bundles.Add(new StyleBundle("~/Provider/Create.css").Include(
                         "~/Content/Provider/Create.css"));
+            bundles.Add(new StyleBundle("~/Provider/Profile.css").Include(
+                        "~/Content/Provider/Profile.css"));
+
 
             //end actions css
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

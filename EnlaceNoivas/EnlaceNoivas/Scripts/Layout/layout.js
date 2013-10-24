@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
     }).data( "autocomplete" )._renderItem = function( ul, item ) {
         var inner_html = '<a><div class="row"></div><div class="col-lg-4" id="image"><img width="70" height="75" src="' + item.image + '"/></div><div class="col-lg-8"><div class="row"><h4>' + item.label + '</h4></div><div class="row"><p>' + item.city + '</p><p>' + item.type +'</p></div></div></a>';
-        return $('<a href="/Provider/'+replaceAll(item.label," ","-")+'"><li></li></a>')
+        return $('<a href="/Provider/'+replaceAll(item.label," ","_")+'"><li></li></a>')
             .data( "item.autocomplete", item )
             .append(inner_html)
             .appendTo( ul );

@@ -1,4 +1,10 @@
-﻿*:focus {
+﻿body {
+    height:100%;
+}
+.btn-info:hover {
+    background-color:#3A9DBB;
+}
+*:focus {
   outline: none;
 }
 .modal-dialog {

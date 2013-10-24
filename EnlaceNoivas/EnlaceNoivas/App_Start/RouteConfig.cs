@@ -13,6 +13,11 @@ namespace EnlaceNoivas
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapRoute(
+                name: "ProfileProvider",
+                url: "Provider/{providerName}",
+                defaults: new { controller = "Provider", action = "Profile"}
+            );
+            routes.MapRoute(
                 name: "SearchPage",
                 url: "Search/SearchProvider/{searched}/{page}",
                 defaults: new { controller = "Search", action = "SearchProvider", page = UrlParameter.Optional, searched = UrlParameter.Optional }

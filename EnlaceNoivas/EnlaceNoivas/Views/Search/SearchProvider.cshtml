@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<EnlaceNoivas.Models.Provider>
 @{
-    ViewBag.Title = "SearchProvider";
+    ViewBag.Title = "Pesquisando fornecedores...";
     ViewBag.Controller = "Search";
     ViewBag.Action = "SearchProvider";
 }
@@ -8,24 +8,26 @@
 @foreach (var provider in Model)
 {
     <div class="row" id="line">
-        <div class="col-lg-1"></div>
+        <a class="link-to-provider" href="/Provider/@provider.Name.Replace(" ", "_")">
+            <div class="col-lg-1"></div>
 
-        <div class="col-lg-2" id="bg-image-line">
-            <div id="image-line">
-                <img width="115" height="105" src="~/Content/Images/@provider.Image" />
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="row" id="bg-text-line">
-                <div id="text-line">
-                    <h3>@provider.Name</h3>
-                    <p>@provider.City</p>
-                    <p>@provider.Type</p>
+            <div class="col-lg-2" id="bg-image-line">
+                <div id="image-line">
+                    <img width="115" height="105" src="~/Content/Images/@provider.Image" />
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="row" id="bg-text-line">
+                    <div id="text-line">
+                        <h3>@provider.Name</h3>
+                        <p>@provider.City</p>
+                        <p>@provider.Type</p>
+                    </div>
+                </div>
 
-        </div>
-    </div>
+            </div>
+        </a>
+</div>
 }
 <div class="row" id="line">
         <div class="col-lg-2"></div>    

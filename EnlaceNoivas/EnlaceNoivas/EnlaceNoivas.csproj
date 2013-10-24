@@ -202,9 +202,14 @@
     <Compile Include="Migrations\201309301654067_somethingthatidontknow.Designer.cs">
       <DependentUpon>201309301654067_somethingthatidontknow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310211723015_AddPhotoOdProviderTable.cs" />
+    <Compile Include="Migrations\201310211723015_AddPhotoOdProviderTable.Designer.cs">
+      <DependentUpon>201310211723015_AddPhotoOdProviderTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Couple.cs" />
     <Compile Include="Models\ModelContext.cs" />
+    <Compile Include="Models\PhotoOfProvider.cs" />
     <Compile Include="Models\Provider.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +221,7 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\Layout\layout.css" />
     <Content Include="Content\Provider\Create.css" />
+    <Content Include="Content\Provider\Profile.css" />
     <Content Include="Content\Search\SearchNotFound.css" />
     <Content Include="Content\Search\SearchProvider.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201309301654067_somethingthatidontknow.resx">
       <DependentUpon>201309301654067_somethingthatidontknow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310211723015_AddPhotoOdProviderTable.resx">
+      <DependentUpon>201310211723015_AddPhotoOdProviderTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

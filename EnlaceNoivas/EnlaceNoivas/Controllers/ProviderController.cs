@@ -19,6 +19,9 @@ namespace EnlaceNoivas.Controllers
         }
         public ActionResult Register(ProviderMV prov)
         {
+            /*db.Provider.Add(prov.Provider);
+            db.SaveChanges();*/
+            return View("Create");
             if (ModelState.IsValid)
             {
                 Provider provider = prov.Provider;
@@ -30,6 +33,10 @@ namespace EnlaceNoivas.Controllers
             else {
                 return View("Create");
             }
+        }
+        public ActionResult Profile(string providerName) {
+            providerName = providerName.Replace("_", " ");
+            return View(db.Provider.Where(p => p.Name == providerName).FirstOrDefault());
         }
 
     }

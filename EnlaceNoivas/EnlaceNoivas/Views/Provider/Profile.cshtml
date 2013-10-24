@@ -1,5 +1,48 @@
-﻿@{
-    ViewBag.Title = "Profile";
+﻿@model EnlaceNoivas.Models.Provider
+@{
+    ViewBag.Title = Model.Name;
+    ViewBag.Action = "Profile";
+    ViewBag.Controller = "Provider";
 }
-
+<div class="row" >
+    <div class="col-lg-2">
+        <div id="col-left">
+            <div id="avatar-image">
+                <img src="../@Model.ImagePath" />
+            </div>
+            <div class="blue-space">
+            </div>
+            <div id="content">
+                <p class="name">@Model.Name</p>
+                <div class="go-right">
+                    <p class="type">@Model.Type</p>
+                    <input type="button" class="btn btn-info" value="Contato"/>
+                </div>
+            </div>
+            <div class="gray-space"></div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="row" id="row-content">
+            <div class="col-lg-4">
+                <div id="header"><p>Sobre</p></div>
+                <div id="about-content">
+                    <p>@Model.City</p>
+                    <p>@Model.Street , @Model.Number</p>
+                    <br/>
+                    <p>@Model.Phone1</p>
+                    <p>@Model.Phone2</p>
+                    <br/>
+                    <a>@Model.Site</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div id="header"><p>Galeria</p></div>
+                <div id="galary-content">
+                    <!-- Galary Photos -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

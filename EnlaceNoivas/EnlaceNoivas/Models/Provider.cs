@@ -33,6 +33,8 @@ namespace EnlaceNoivas.Models
                     return "../Content/Images/" + User.Username + "/" + Image;
             }
         }
+
+        public IEnumerable<PhotoOfProvider> Galary { get; set; }
     
     }
 }

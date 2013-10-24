@@ -1,0 +1,65 @@
+﻿#avatar-image img {
+    width:100%;
+}
+#avatar-image {
+    margin-top:0px;
+}
+#col-left {
+    border-right:2px solid #dedede;
+    min-height:620px;
+    background-color: #393735;
+}
+#content {
+    display:block;
+    margin:0px;
+    background-color: #2a2a2a;
+}
+.blue-space{
+    background-color: #3f6f74;
+    height:5px;
+}
+.gray-space{
+    background-color: #423f3d;
+    height:1px;
+}
+.name {
+
+    padding-top:10px;
+    padding-left:5px;
+    color: #dedede;
+    font-size:22px;
+}
+.type {
+    font-weight:bold;
+    color:#9f9f9f;
+}
+.go-right{
+    margin-left:40%;
+    padding-bottom:10px;
+}
+#content input{
+    margin-left:10px;
+}
+#row-content {
+    margin-right:0px;
+    margin-left:-45px;
+}
+#header, #about-content {
+    border:1px solid #edebe6;
+    padding-top:5px;
+    padding-left:10px;
+    background: #f7f7f7;
+}
+#header p {
+    margin-top:5px;
+    color:#928d86;
+    font-size:38px;
+}
+#about-content {
+    padding-top:20  px;
+    margin-top:-1px;
+}
+#about-content p{
+    color:#a3a3a3;
+    font-size:16px;
+}
